@@ -3,7 +3,7 @@
  * Author: Dombepola D.A.C.T
  * Date: October 8, 2023
  * Description: This file defines the TicketController, which implements the controllers for ticket.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using EAD_BACKEND.IServices;
@@ -26,7 +26,7 @@ namespace EAD_BACKEND.Controllers
 
         // Controller for getting all the tickets
         [HttpGet]
-        public ActionResult<List<Ticket>> GetTicketsController()
+        public ActionResult<List<Object>> GetTicketsController()
         {
             return ticketService.GetTickets();
         }

@@ -3,25 +3,35 @@
  * Author: Dombepola D.A.C.T
  * Date: October 8, 2023
  * Description: This file defines the TicketService class, which implements the ITicketService interface.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using EAD_BACKEND.IServices;
 using EAD_BACKEND.Models;
 using EAD_BACKEND.Interfaces;
 using MongoDB.Driver;
+using EAD_BACKEND.Implementations;
 
 namespace EAD_BACKEND.Services
 {
     public class TicketService : ITicketService
     {
         private readonly IMongoCollection<Ticket> _ticketObj;
+        UserService userService;
 
         // Constructor to initialize the MongoDB collection
         public TicketService(ITicketDBSettings settings, IMongoClient mongoClient)
         {
             var database = mongoClient.GetDatabase(settings.DatabaseName);
             _ticketObj = database.GetCollection<Ticket>(settings.TicketCollectionName);
+            var userDBSettings = new UserDBSettings
+            {
+                DatabaseName = "EAD_DB",
+                UserCollectionName = "users",
+               
+            };
+            var mongoClientForUser = new MongoClient("mongodb://localhost:27017/EAD_DB");
+            userService = new UserService(userDBSettings, mongoClientForUser);
         }
 
         // Method for creating a new ticket
@@ -39,9 +49,35 @@ namespace EAD_BACKEND.Services
         }
 
         // Method for retrieve all tickets from the database
-        public List<Ticket> GetTickets()
+        public List<Object> GetTickets()
         {
-            return _ticketObj.Find(_ => true).ToList();
+            var ticketData = _ticketObj.Find(_ => true).ToList();
+            var ticketsWithUserNIC = new List<object>();
+
+            foreach (var ticket in ticketData)
+            {
+                var user = userService.GetUserByID(ticket.UserId);
+                if (user != null)
+                {
+                    var ticketWithUserNIC = new
+                    {
+                        id = ticket.Id,
+                        trainId = ticket.TrainId,
+                        dateTime = ticket.DateTime,
+                        start = ticket.Start,
+                        end = ticket.End,
+                        price = ticket.Price,
+                        noOfTicket = ticket.NoOfTicket,
+                        userId = ticket.UserId,
+                        total = ticket.Total,
+                        nic = user.Nic
+                    };
+
+                    ticketsWithUserNIC.Add(ticketWithUserNIC);
+                }
+            }
+
+            return ticketsWithUserNIC;
         }
 
         // Method for retrieving tickets by user ID from the database

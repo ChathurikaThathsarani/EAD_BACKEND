@@ -17,5 +17,6 @@ namespace EAD_BACKEND.IServices
         int CreateUser(User user);
         void UpdateUser(string userID, User user);
         void RemoveUser(string userID);
+        User GetUserByNic(string nic);
     }
 }

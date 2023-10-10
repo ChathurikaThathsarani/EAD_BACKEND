@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tech\\Downloads\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj": {}
+    "C:\\Users\\Tech\\Desktop\\EAD_Assignment\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tech\\Downloads\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj": {
+    "C:\\Users\\Tech\\Desktop\\EAD_Assignment\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tech\\Downloads\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj",
+        "projectUniqueName": "C:\\Users\\Tech\\Desktop\\EAD_Assignment\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj",
         "projectName": "EAD_BACKEND",
-        "projectPath": "C:\\Users\\Tech\\Downloads\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj",
+        "projectPath": "C:\\Users\\Tech\\Desktop\\EAD_Assignment\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND.csproj",
         "packagesPath": "C:\\Users\\Tech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tech\\Downloads\\EAD_BACKEND\\EAD_BACKEND\\obj\\",
+        "outputPath": "C:\\Users\\Tech\\Desktop\\EAD_Assignment\\EAD_BACKEND\\EAD_BACKEND\\EAD_BACKEND\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,7 +3,7 @@
  * Author: Wanni Arachchige H.S
  * Date: October 8, 2023
  * Description: This file defines the UserController, which implements the controllers for user.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using Microsoft.AspNetCore.Mvc;
@@ -117,6 +117,20 @@ namespace EAD_BACKEND.Controllers
             userService.RemoveUser(available.Id);
 
             return Ok($"User is successfully deleted");
+        }
+
+        // Controller for getting a user by NIC
+        [HttpGet("getByNic/{nic}")]
+        public ActionResult<User> GetUserByNicController(string nic)
+        {
+            var available = userService.GetUserByNic(nic);
+
+            if (available == null)
+            {
+                return NotFound($"User with NIC {nic} cannot be found");
+            }
+
+            return available;
         }
 
     }

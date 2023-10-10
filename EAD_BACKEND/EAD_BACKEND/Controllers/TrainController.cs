@@ -3,7 +3,7 @@
  * Author: Jayasingha U.A.C.L
  * Date: October 8, 2023
  * Description: This file defines the TrainController, which implements the controllers for train.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using EAD_BACKEND.IServices;
@@ -39,7 +39,7 @@ namespace EAD_BACKEND.Controllers
 
         // Controller for getting the train by its ID
         [HttpGet("{id}")]
-        public ActionResult<Train> Get(string id)
+        public ActionResult<Train> GetTrainByIDController(string id)
         {
             var available = trainService.GetTrainById(id);
 

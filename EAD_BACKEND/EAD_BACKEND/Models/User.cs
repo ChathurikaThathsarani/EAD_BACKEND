@@ -3,7 +3,7 @@
  * Author: Wanni Arachchige H.S
  * Date: October 8, 2023
  * Description: This file contains the definition of the User class.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using MongoDB.Bson.Serialization.Attributes;

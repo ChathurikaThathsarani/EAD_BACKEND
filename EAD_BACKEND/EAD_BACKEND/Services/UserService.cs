@@ -3,7 +3,7 @@
  * Author: Wanni Arachchige H.S
  * Date: October 8, 2023
  * Description: This file defines the UserService class, which implements the IUserService interface.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared
  */
 
 using EAD_BACKEND.IServices;
@@ -71,6 +71,12 @@ namespace EAD_BACKEND.Services
         public void UpdateUser(string userID, User user)
         {
             userObj.ReplaceOne(user => user.Id == userID, user);
+        }
+
+        // Method for getting a user by NIC
+        public User GetUserByNic(string nic)
+        {
+            return userObj.Find(user => user.Nic == nic).FirstOrDefault();
         }
     }
 }

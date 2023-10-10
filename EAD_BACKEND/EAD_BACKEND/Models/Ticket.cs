@@ -3,7 +3,7 @@
  * Author: Dombepola D.A.C.T
  * Date: October 8, 2023
  * Description: This file contains the definition of the Ticket class.
- * Reference: 
+ * Reference: https://youtu.be/dsvL22_w88I?feature=shared 
  */
 
 using MongoDB.Bson.Serialization.Attributes;
@@ -49,5 +49,6 @@ namespace EAD_BACKEND.Models
         [BsonElement("total")]
         [Required]
         public double Total { get; set; }
+
     }
 }

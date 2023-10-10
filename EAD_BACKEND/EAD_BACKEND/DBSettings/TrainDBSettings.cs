@@ -2,8 +2,8 @@
  * File: TrainDBSettings.cs
  * Author: Jayasingha U.A.C.L
  * Date: October 8, 2023
- * Description: This file defines the TrainDBSettings class, which represents the implemenattion for the ITrainDBSettings interface.
- * Reference: 
+ * Description: This file defines the TrainDBSettings class, which represents the implementation for the ITrainDBSettings interface.
+ * Reference: https://youtube.com/playlist?list=PL82C6-O4XrHdiS10BLh23x71ve9mQCln0&si=cyZFtfJ6-tAtDonz
  */
 
 using EAD_BACKEND.Interfaces;

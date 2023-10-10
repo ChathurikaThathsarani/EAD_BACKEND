@@ -32,6 +32,7 @@ builder.Services.AddSingleton<IMongoClient>(s => new MongoClient(builder.Configu
 
 builder.Services.AddScoped<ITrainService, TrainService>();
 
+
 builder.Services.Configure<TicketDBSettings>(builder.Configuration.GetSection(nameof(TicketDBSettings)));
 
 builder.Services.AddSingleton<ITicketDBSettings>(sp => sp.GetRequiredService<IOptions<TicketDBSettings>>().Value);
@@ -51,11 +52,6 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
-
-
-
-
-
 
 var app = builder.Build();
 
